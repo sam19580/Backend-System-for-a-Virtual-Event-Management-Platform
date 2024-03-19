@@ -55,6 +55,10 @@ class Validation{
       const token=jwt.sign(object,'secret');
       return token;
    }
+   static verifyToken(token){
+      const result =jwt.verify(token,'secret');
+      return result;
+   }
    static setOptionalProperties(obj){
       if(obj.hasOwnProperty("limited capacity")){
          obj["limited capacity"]=false;
